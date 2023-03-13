@@ -1,9 +1,4 @@
-# Lunar Assistant Bot
-
-This repo contains the lunar assistant discord bot. See the guide here: https://guide.lunarassistant.com. It provides the following slash commands: 
 ## Commands
-
-### lunar-configure
 
 Configures the GuildConfig for the discord server. Has the following command groups:
 
@@ -30,10 +25,6 @@ Adds a rule for granting a role to users based on cw20 token ownership. When a u
 Adds a rule for granting a role to users based on the response of the specified API. When a user's wallet meets the conditions of the rule, they will be granted the relevant role. Takes the following arguments:
 - api-url (required) : The URL of your custom API against which to check for permission.
 - role (required) : The role to give to users which meet this rule.
-
-Creating your custom API:
-- The url must contain $(wallet) which is an identifier that will be replaced by each user wallet at execution time. Example url: https://myApiUrl.com?walletAddress=$(wallet) 
-- The API must return its response (true or false) in the following format to be parsed correctly: {"allowed":true}
 
 
 #### view-rules
@@ -78,36 +69,6 @@ View the role alerts currently configured for the server.
 
 Remove a role alert. Takes the following arguments:
 - role (required) : The role for which to remove an alert. -->
-
-
-### lunar-link
-
-Allows a user to link a wallet to their discord account. Upon using lunar-link, the user will be sent a link to the lunar assistant website from which they can sign a transaction that proves ownership of the wallet they are registering.
-
-For now a user can only have a single wallet registered at a time. Running lunar-link multiple times will overwrite the users existing wallet.
-
-Upon linking a new wallet, the user's roles are updated to reflect the contents of the new wallet.
-
-### lunar-view-roles
-
-Forces a role update based on the contents of a user's linked wallet, then displays the roles that a user is granted. Takes the following arguments:
-- private-response (optional, false by default): Indicate whether or not you want to make the response viewable to everyone or just yourself.
-### lunar-view-wallet
-
-Displays the wallet a user has linked to their account (only visible to the user who sent the command).
-
-### lunar-disconnect-wallet
-
-Disconnects the user's discord account from their wallet address.
-
-
-## Adding Lunar Assistant To Your Discord Server
-
-You can follow this link to add the Lunar Assistant bot to your discord server: https://discord.com/api/oauth2/authorize?client_id=893178480303407135&permissions=268435456&scope=applications.commands%20bot
-
-## Roadmap
-
-See the roadmap here: https://github.com/orgs/GraviDAO/projects
 
 ## Setup
 
